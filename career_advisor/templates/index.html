@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Career Path Advisor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .section {
+            padding: 10px 0;
+        }
+
+        .checkbox-group, .dropdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 8px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Career Path Advisor</h1>
+        <form action="/predict" method="POST">
+            <div class="section">
+                <h2>Select Your Skills</h2>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="skills" value="python"> Python</label>
+                    <label><input type="checkbox" name="skills" value="java"> Java</label>
+                    <label><input type="checkbox" name="skills" value="c++"> C++</label>
+                    <label><input type="checkbox" name="skills" value="html_css"> HTML/CSS</label>
+                    <label><input type="checkbox" name="skills" value="javascript"> JavaScript</label>
+                    <label><input type="checkbox" name="skills" value="sql"> SQL</label>
+                    <label><input type="checkbox" name="skills" value="data_analysis"> Data Analysis</label>
+                    <label><input type="checkbox" name="skills" value="machine_learning"> Machine Learning</label>
+                    <label><input type="checkbox" name="skills" value="ui_ux"> UI/UX Design</label>
+                    <label><input type="checkbox" name="skills" value="networking"> Networking</label>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Select Your Interests</h2>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="interests" value="ai"> Artificial Intelligence</label>
+                    <label><input type="checkbox" name="interests" value="web_dev"> Web Development</label>
+                    <label><input type="checkbox" name="interests" value="mobile_dev"> Mobile Development</label>
+                    <label><input type="checkbox" name="interests" value="cloud"> Cloud Computing</label>
+                    <label><input type="checkbox" name="interests" value="cybersecurity"> Cybersecurity</label>
+                    <label><input type="checkbox" name="interests" value="gaming"> Game Development</label>
+                    <label><input type="checkbox" name="interests" value="iot"> Internet of Things (IoT)</label>
+                    <label><input type="checkbox" name="interests" value="devops"> DevOps</label>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Select Your Personality Type</h2>
+                <div class="dropdown">
+                    <select name="personality" required>
+                        <option value="">-- Choose One --</option>
+                        <option value="introvert">Introvert</option>
+                        <option value="extrovert">Extrovert</option>
+                        <option value="ambivert">Ambivert</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="section">
+                <input type="submit" value="Get Career Recommendations">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
